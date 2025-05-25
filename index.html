@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Gửi bé iu ❤️</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #fff0f5;
+      overflow-x: hidden;
+    }
+
+    .container {
+      text-align: center;
+      max-width: 600px;
+      padding: 20px;
+      margin: 80px auto;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    input[type="password"] {
+      padding: 10px;
+      width: 80%;
+      margin-top: 15px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+    }
+
+    button {
+      margin-top: 10px;
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #ff69b4;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #ff85c1;
+    }
+
+    .letter {
+      text-align: left;
+      margin-top: 20px;
+      white-space: pre-wrap;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    /* Heart animation */
+    .heart {
+      width: 20px;
+      height: 20px;
+      position: fixed;
+      bottom: 0;
+      animation: floatUp 4s linear forwards;
+      font-size: 20px;
+      color: #ff5eaa;
+      z-index: 999;
+    }
+
+    @keyframes floatUp {
+      0% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-100vh) scale(1.5);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="container" id="login">
+  <h2>🔐 Nhập mật khẩu để đọc thư nè:</h2>
+  <input type="password" id="password" placeholder="vo iu cua anh">
+  <br>
+  <button onclick="checkPassword()">Mở thư 💌</button>
+</div>
+
+<div class="container hidden" id="letter">
+  <h2>💖 Gửi bé thỏ của anh 💖</h2>
+  <div class="letter">
+    Vậy là em sắp thoát kiếp học sinh rồi ha! Chúc mừng em chuẩn bị bước vào hành trình mới nè.
+
+    Anh biết mấy ngày này em đang lo thi cử, chia tay bạn bè, chụp ảnh kỷ yếu, ăn liên hoan lớp, khóc sướt mướt, rồi lại cười toe toét – nói chung là một mớ cảm xúc lẫn lộn. Nhưng này, đừng quên chụp thật nhiều ảnh, viết thật nhiều lưu bút, và… chừa chỗ cho anh một dòng nha (hoặc nguyên trang cũng được, anh không chê đâu) hị hị.Thi xong, ra trường rồi thì phải học tiếng Đức toàn thời gian ùi. Rồi thời gian sẽ trôi nhanh hoiii và mình sẽ gặp nhau tại nước Đức này. Khi đó anh và em gặp nhau ở sân bay. Chúng mình sẽ ôm nhau nhưng không phải cái ôm tạm biệt như ở sân bay Việt Nam mà là cái ôm gặp lại nhau sau quãng thời gian mà mình yêu xa. Và mình sẽ tiếp tục bên cạnh nhau như ở Việt Nam muahahaha và anh sẽ dính em 24/7😋.
+
+    Anh chúc em thi mọi kì thi đều đạt kết quả thiệt là cao trong mọi kì thi sắp tới nhất là thi tốt nghiệp nè. Mãi iu bé thỏ của anhh ❤️🐰
+
+    Chồng’s tương lai của bé  
+    Bi
+  </div>
+</div>
+
+<script>
+  function checkPassword() {
+    const input = document.getElementById("password").value.trim().toLowerCase();
+    if (input === "vo iu cua anh") {
+      document.getElementById("login").classList.add("hidden");
+      document.getElementById("letter").classList.remove("hidden");
+      startHearts();
+    } else {
+      alert("Sai mật khẩu rồi bé ơi 🥺 Thử lại nha!");
+    }
+  }
+
+  function startHearts() {
+    setInterval(() => {
+      const heart = document.createElement("div");
+      heart.className = "heart";
+      heart.innerText = "❤️";
+      heart.style.left = Math.random() * 100 + "vw";
+      document.body.appendChild(heart);
+      setTimeout(() => heart.remove(), 4000);
+    }, 300);
+  }
+</script>
+
+</body>
+</html>
